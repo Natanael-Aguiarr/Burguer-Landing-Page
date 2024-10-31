@@ -11,15 +11,23 @@
     list-style: none;
     text-decoration: none;
 }
+
+[data-theme="dark"]{
+    --white: #000;
+    --dark: #fff;
+}
 :root {
     --red: #d63a25;
     --white: #fff;
-    --dark: #1e1c2a;
+    --dark: #000;
+    --blue: rgb(17, 124, 138);
 }
 body {
-    color: var(--dark);
-    background: var(--white);
+    min-height: 100vh;
+    background-color: var(--white);
+    transition: 0.8s;
 }
+
 .navigation {
     display: flex;
     align-items: center;
@@ -27,15 +35,16 @@ body {
     padding: 18px 40px;
     box-shadow: 0 0.1rem 0.5rem #ccc;
     width: 100%;
-    background: var(--white);
     transition: all 0.5s;
     position: fixed;
     font-family: "Poetsen One";
+
 }
 .navigation .logo {
     color: var(--red);
     font-size: 1.7rem;
     font-weight: 600;
+    
 }
 .logo span{
     color: var(--dark);
@@ -43,7 +52,7 @@ body {
 .navigation ul {
     display: flex;
     text-align: center;
-    gap: 4rem;
+    gap: 3rem;
 }
 .navigation ul li a {
     color: var(--dark);
@@ -53,13 +62,16 @@ body {
 }
 .navigation ul li a:hover {
     color: var(--red);
-    border-bottom: 2px solid var(--red);
+    border-bottom: 1px solid var(--red);
     margin-bottom: 10%;
 }
+
 .navigation i {
     cursor: pointer;
     font-size: 1.5rem;
 }
+
+
 .menu {
     cursor: pointer;
     display: none;
@@ -85,6 +97,7 @@ body {
     justify-content: space-between;
     padding: 10%;
     font-family: "Noto Serif";
+    
 }
 .home-text {
     max-width: 37rem;
@@ -168,7 +181,92 @@ body {
 }
 .home-img {
     width: 100%;
+
 }
 }
+.trilho{
+    width: 60px;
+    height: 30px;
+    background: #4d4d4d;
+    border-radius:20px;
+    position: relative;
+    cursor: pointer;
+    
+}
+.trilho .indicador {
+    width: 28px;
+    height: 30px;
+    background: #000;
+    border-radius: 50%;
+    transform: scale(0.8);
+    position: absolute;
+    left: 0;
+    transition: 0.5s;
+    /*transition: all 0.8s;*/
+}
+.trilho.dark {
+    background: #c3c3c3;
+}
+.trilho.dark .indicador {
+    left: 32px;
+    background-color: #fff;
+    /*transition: all 0.8s;*/
+}
 
+body.dark {
+    background: #050101;
+    
+}
+body.dark .logo {
+    color: var(--blue);
+    transition: 0.8s;
+}
+body.dark .logo span {
+    color: #c3c3c3;
+    transition: 0.8s;
+}
+body.dark .navigation ul li a {
+    color: #c3c3c3  ;
+    transition: all 0.5s;
+    transition: 0.8s;
+}
+body.dark .navigation ul li a:hover {
+    color: var(--blue);
+    border-bottom: 1px solid var(--blue);
+    transition: 0.8s;
+    
+}
+body.dark .navigation i {
+    color: #c3c3c3;
+    transition: 0.8s;
+}
+body.dark .menu .bar {
+    background-color: #c3c3c3;
+    transition: 0.8s;
+}
+body.dark .menu .bar:nth-child(1),
+body.dark .menu .bar:nth-child(3) {
+    background: var(--blue);
+    transition: 0.8s;
+}
+body.dark .home-text .text-h4 {
+    color: var(--blue);
+    transition: 0.8s;
+}
+body.dark .home-text .text-h1 {
+    color: #c3c3c3;
+    transition: 0.8s;
+}
+body.dark .home-text p {
+    color: #c3c3c3;
+    transition: 0.8s;
+}
 
+body.dark .home-btn {
+    background: var(--blue);
+    color: var(--black);
+    transition: 0.8s;
+}
+body.dark .home-btn:hover {
+    background: rgb(20, 196, 219);
+}
